@@ -148,11 +148,10 @@
 
 <script>
 // ===== 配置 =====
-const WORKER_URL = "https://xin-qin-an-wei.vercel.app/api/proxy";
+const WORKER_URL = "https://xin-qin-an-wei.pages.dev/api/proxy";
 const ZHIPU_MODEL = "glm-4-flash";
 const DEEPSEEK_MODEL = "deepseek-v4-flash";
 let currentModel = localStorage.getItem('currentModel') || 'zhipu';
-
 function getAPIUrl(){ return WORKER_URL; }
 function getModelName(){ return currentModel === 'deepseek' ? DEEPSEEK_MODEL : ZHIPU_MODEL; }
 
