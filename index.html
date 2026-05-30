@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -13,7 +13,6 @@
       --bg-input: #f5f1f3; --btn: #f97e97; --btn-hover: #f86b87; --text-user: #fff; --text-ai: #555;
       --text-header: #6b5f63; --border-light: rgba(0,0,0,0.05); --tab-active: #f97e97;
       --card-bg: #fff; --card-border: #e0c8d0; --card-shadow: rgba(0,0,0,0.10);
-      --card-back: linear-gradient(135deg, #667eea, #764ba2);
     }
     .theme-pink{--bg-body:#fdfbfb;--bg-chat:#fff;--bg-header:#f9f3f5;--bg-user:#f97e97;--bg-ai:#f5f1f3;--bg-input:#f5f1f3;--btn:#f97e97;--btn-hover:#f86b87;--text-user:#fff;--text-ai:#555;--text-header:#6b5f63;--tab-active:#f97e97;--card-bg:#fff;--card-border:#e0c8d0}
     .theme-blue{--bg-body:#f7f8fc;--bg-chat:#fff;--bg-header:#eef2fb;--bg-user:#6b8bdb;--bg-ai:#f1f5fb;--bg-input:#f1f5fb;--btn:#6b8bdb;--btn-hover:#5a7bcf;--text-user:#fff;--text-ai:#555;--text-header:#4a5a7a;--tab-active:#6b8bdb;--card-bg:#fff;--card-border:#c0d0e8}
@@ -22,7 +21,6 @@
     .theme-dark{--bg-body:#1a1a1d;--bg-chat:#252529;--bg-header:#2d2d33;--bg-user:#5a86f0;--bg-ai:#36363d;--bg-input:#36363d;--btn:#5a86f0;--btn-hover:#4a76e0;--text-user:#fff;--text-ai:#e0e0e0;--text-header:#d0d0d8;--tab-active:#5a86f0;--border-light:rgba(255,255,255,0.08);--card-bg:#2d2d33;--card-border:#4a4a5a}
     .theme-dark #msg-input::placeholder{color:#ccc}
     .theme-dark .interact-input::placeholder{color:#bbb}
-    .theme-dark #uRep::placeholder{color:#bbb}
     .chat-wrapper{width:100%;max-width:100%;height:100dvh;display:flex;flex-direction:column;background:var(--bg-chat);overflow:hidden}
     .chat-box{width:100%;height:100%;display:flex;flex-direction:column;overflow:hidden;border-radius:0}
     .theme-bar{display:flex;gap:8px;padding:8px 12px;background:var(--bg-header);align-items:center;flex-shrink:0}
@@ -37,7 +35,6 @@
     .chat-header{background:var(--bg-header);padding:4px 20px 6px;text-align:center;flex-shrink:0}
     .chat-header h3{font-size:14px;color:var(--text-header);font-weight:500}
     .mode-bar{padding:4px 8px;background:var(--bg-header);border-top:1px solid var(--border-light);flex-shrink:0}
-    .mode-bar.collapsed{display:none}
     .mode-bar-label{font-size:9px;color:var(--text-header);opacity:0.5;margin-bottom:2px;text-align:center}
     .mode-grid{display:flex;flex-wrap:wrap;gap:3px;justify-content:center}
     .mode-card{background:var(--bg-body);border:1px solid var(--border-light);border-radius:6px;padding:4px 6px;text-align:center;cursor:pointer;transition:all 0.2s;font-size:9px;color:var(--text-ai);white-space:nowrap}
@@ -78,22 +75,10 @@
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
     @keyframes flyToFire{0%{transform:scale(1);top:40px;opacity:1}100%{transform:scale(0.3);top:180px;opacity:0}}
     @keyframes crackle{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
-    .dice-stage{perspective:800px;width:100%;height:200px;display:flex;align-items:center;justify-content:center}
-    .dice-cube{width:100px;height:100px;position:relative;transform-style:preserve-3d;cursor:pointer}
-    .dice-cube.rolling{animation:diceRoll 1.5s cubic-bezier(0.25,0.1,0.25,1) forwards}
-    .dice-face{position:absolute;width:100px;height:100px;background:var(--card-bg);border:3px solid var(--btn);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;color:var(--btn);backface-visibility:visible}
-    .dice-face:nth-child(1){transform:translateZ(50px)}.dice-face:nth-child(2){transform:rotateY(180deg) translateZ(50px)}
-    .dice-face:nth-child(3){transform:rotateY(-90deg) translateZ(50px)}.dice-face:nth-child(4){transform:rotateY(90deg) translateZ(50px)}
-    .dice-face:nth-child(5){transform:rotateX(90deg) translateZ(50px)}.dice-face:nth-child(6){transform:rotateX(-90deg) translateZ(50px)}
-    @keyframes diceRoll{0%{transform:rotateX(0) rotateY(0) rotateZ(0)}25%{transform:rotateX(360deg) rotateY(180deg) rotateZ(90deg)}50%{transform:rotateX(720deg) rotateY(360deg) rotateZ(180deg)}75%{transform:rotateX(900deg) rotateY(540deg) rotateZ(270deg)}100%{transform:rotateX(1080deg) rotateY(720deg) rotateZ(360deg)}}
-    .dice-result-text{font-size:18px;font-weight:700;color:var(--tab-active);text-align:center;margin-top:8px}
-    .dice-hint-text{font-size:11px;color:var(--text-ai);opacity:0.6;text-align:center;margin-top:4px;font-style:italic}
     .parent-translator-stage{width:100%;max-width:340px;display:flex;flex-direction:column;gap:12px}
     .parent-select{width:100%;padding:10px;border:1px solid var(--card-border);border-radius:10px;background:var(--card-bg);font-size:13px;color:var(--text-ai);outline:none}
     .unknot-thread{display:inline-block;animation:unknotTie 0.6s ease-out forwards}
     @keyframes unknotTie{0%{transform:scale(1.3);opacity:0.3}60%{transform:scale(0.95);opacity:1}100%{transform:scale(1);opacity:1}}
-    .mirror-flip{display:inline-block;animation:mirrorTurn 0.5s ease-out forwards}
-    @keyframes mirrorTurn{0%{transform:rotateY(0)}50%{transform:rotateY(90deg)}100%{transform:rotateY(0)}}
     .chat-input-area{display:flex;padding:8px 12px;gap:8px;border-top:1px solid var(--border-light);flex-shrink:0}
     #msg-input{flex:1;padding:10px 14px;border:none;border-radius:20px;background:var(--bg-input);font-size:14px;outline:none;color:var(--text-ai);height:44px}
     #msg-input:disabled{opacity:0.5}
@@ -111,13 +96,6 @@
     .settings-item.active-model{border-color:var(--tab-active);background:var(--bg-ai);font-weight:600}
     .settings-close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-ai)}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-    /* 彩蛋动画 */
-    .easter-egg-overlay{position:fixed;top:0;left:0;width:100vw;height:100vh;background:#ffeaa7;z-index:10000;display:none;overflow:hidden}
-    .easter-egg-overlay.active{display:block}
-    .easter-egg-overlay .ee-char{position:absolute;font-size:70px;transition:all 0.6s;z-index:10}
-    .easter-egg-overlay .ee-room-bg{position:absolute;top:0;left:0;width:100%;height:100%;background:#ffeaa7;transition:background 0.5s;z-index:1}
-    .easter-egg-overlay .ee-room-bg.warm-bg{background:#fce4ec}
-    .easter-egg-overlay .ee-exit-btn{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);padding:15px 35px;background:#2d3436;color:#fff;border:none;border-radius:30px;font-size:18px;cursor:pointer;z-index:20;display:none;animation:fadeIn 0.5s}
   </style>
 </head>
 <body class="theme-pink">
@@ -139,11 +117,9 @@
         <div class="mode-card active" data-mode="通用陪伴"><span class="mode-emoji">🌿</span>通用</div>
         <div class="mode-card" data-mode="情绪焚烧炉"><span class="mode-emoji">🔥</span>焚烧</div>
         <div class="mode-card" data-mode="情绪镜像"><span class="mode-emoji">💠</span>镜像</div>
-        <div class="mode-card" data-mode="纠结骰子"><span class="mode-emoji">🎲</span>骰子</div>
         <div class="mode-card" data-mode="解结"><span class="mode-emoji">🧶</span>解结</div>
-        <div class="mode-card" data-mode="镜子日记"><span class="mode-emoji">🪞</span>日记</div>
         <div class="mode-card" data-mode="父母翻译器"><span class="mode-emoji">🫂</span>翻译器</div>
-        <div class="mode-card" data-mode="情绪日记"><span class="mode-emoji">📊</span>周记</div>
+        <div class="mode-card" data-mode="情绪周记"><span class="mode-emoji">📊</span>周记</div>
       </div>
     </div>
     <div class="chat-messages" id="msgList"></div>
@@ -164,29 +140,15 @@
     <div class="settings-item" id="modelZhipu" onclick="switchModel('zhipu')">🤖 AI模型：智谱清言</div>
     <div class="settings-item" id="modelDeepseek" onclick="switchModel('deepseek')">🤖 AI模型：DeepSeek V4</div>
     <div class="settings-item" onclick="alert('聊天记录保存在你的浏览器中，清空缓存会丢失。')">💾 数据说明</div>
-    <div class="settings-item" onclick="alert('版本：赛事专用 | 8个模式 | 双模型切换')">ℹ️ 关于</div>
+    <div class="settings-item" onclick="alert('版本：赛事专用 | 6个模式 | 双模型切换')">ℹ️ 关于</div>
     <div class="settings-item" onclick="alert('感谢你的反馈！')">📬 意见箱</div>
     <button class="interact-btn" style="margin-top:12px;width:100%" onclick="closeSettings()">关闭</button>
   </div>
 </div>
 
-<div class="easter-egg-overlay" id="easterEggOverlay">
-  <div class="ee-room-bg" id="eeBg"></div>
-  <div class="ee-char" id="eeBoy" style="bottom:120px;left:30px;">👦</div>
-  <div class="ee-char" id="eeCandy" style="bottom:140px;left:90px;font-size:50px;">🍭</div>
-  <div class="ee-char" id="eeSister" style="bottom:50px;right:30px;display:none;">👩</div>
-  <div class="ee-char" id="eeCry" style="top:40px;left:50px;font-size:50px;display:none;">😭</div>
-  <div class="ee-char" id="eeBubble" style="bottom:130px;right:80px;font-size:14px;color:#5d4037;display:none;padding:8px 14px;border-radius:16px;max-width:180px;">怎么啦小弟弟？</div>
-  <div class="ee-char" id="eeResult" style="font-size:50px;display:none;"></div>
-  <div class="ee-char" id="eeHearts" style="bottom:130px;left:50%;transform:translateX(-50%);display:none;gap:8px;">
-    <span style="font-size:40px">💕</span><span style="font-size:40px">💕</span><span style="font-size:40px">💕</span>
-  </div>
-  <button class="ee-exit-btn" id="eeExitBtn" onclick="closeEasterEgg()">🚪 退出</button>
-</div>
-
 <script>
 // ===== 配置 =====
-const WORKER_URL = "https://xin-qin-an-wei-kxqz.vercel.app/api/proxy";
+const WORKER_URL = "https://xin-qin-an-wei.vercel.app/api/proxy";
 const ZHIPU_MODEL = "glm-4-flash";
 const DEEPSEEK_MODEL = "deepseek-v4-flash";
 let currentModel = localStorage.getItem('currentModel') || 'zhipu';
@@ -194,7 +156,6 @@ let currentModel = localStorage.getItem('currentModel') || 'zhipu';
 function getAPIUrl(){ return WORKER_URL; }
 function getModelName(){ return currentModel === 'deepseek' ? DEEPSEEK_MODEL : ZHIPU_MODEL; }
 
-// ===== 核心：统一API请求函数（加时间戳防缓存）=====
 async function apiFetch(body){
   const url = `${getAPIUrl()}?t=${Date.now()}`;
   return fetch(url, {
@@ -218,11 +179,9 @@ const MODE_PROMPTS = {
   "通用陪伴": `【任务】检测用户情绪，用温柔口语回应。不教育不批评不分析。先接住情绪，再回应内容。短句。自然。不书面。`,
   "情绪焚烧炉": `【任务】用户把愤怒的话写出来扔进火堆了。给他一句仪式感结语。30字内。不要说教。像看着火光说一句话。`,
   "情绪镜像": `【任务】根据用户选择的颜色、需求、强度，生成三段内容：【情绪画像】描述他此刻的样子；【内心独白】用第一人称替他表达；【温柔提醒】给一句观察，不给建议。`,
-  "纠结骰子": `【任务】把用户模糊的需求转成具体选项列表。不给建议，不分析。"要不要"类回复"去,不去"。"吃什么"类生成10-15个具体选项。只输出选项，中文逗号分隔。`,
   "解结": `【任务】苏格拉底式提问。帮用户解开纠结。不给建议不给答案。每次只问1-2个具体问题。用户说出答案后说："这是你自己找到的答案。"`,
-  "镜子日记": `【任务】用户写一段心情。你用第一人称"我"帮ta重写，让情绪更清晰。80字内。保留原意，不美化不评价。让他从文字里看见自己。`,
   "父母翻译器": `【任务】用户输入父母说的话，翻译三层：🧠父母可能真正的动机、💔为什么用户会有这种反应、💡可以怎么回应。不站队。用户可能是14岁也可能是45岁。`,
-  "情绪日记": `【任务】用户输入一周的心情记录。帮ta生成一段叙事性回顾，像朋友在帮ta看这一周。150字内。提取关键情绪变化。让他看清自己走过的路。`
+  "情绪周记": `【任务】用户输入一周的心情记录。帮ta生成一段叙事性回顾，像朋友在帮ta看这一周。150字内。提取关键情绪变化。让他看清自己走过的路。`
 };
 
 const MODE_GREETINGS = { "通用陪伴": "🌿 我在这里。想说什么，或者不想说话，都可以。" };
@@ -251,7 +210,6 @@ const MAX_HISTORY = 30;
 const msgList = document.getElementById('msgList'), msgInput = document.getElementById('msg-input');
 const sendBtn = document.getElementById('send-btn'), modeTitle = document.getElementById('modeTitle');
 const chatInputArea = document.getElementById('chatInputArea'), interactArea = document.getElementById('interactArea');
-const modeBar = document.getElementById('modeBar');
 
 let abortController = null, currentAIMsgDiv = null, isGenerating = false, messageTimestamps = [];
 
@@ -292,11 +250,9 @@ function switchMode(mode){
   updateUILayout(mode);
   if(mode==='情绪焚烧炉') buildBurnUI();
   else if(mode==='情绪镜像') buildMirrorUI();
-  else if(mode==='纠结骰子') buildDiceUI();
   else if(mode==='解结') buildUnknotUI();
-  else if(mode==='镜子日记') buildMirrorDiaryUI();
   else if(mode==='父母翻译器') buildParentUI();
-  else if(mode==='情绪日记') buildEmotionDiaryUI();
+  else if(mode==='情绪周记') buildDiaryUI();
 }
 document.querySelectorAll('.mode-card').forEach(card=>{ card.addEventListener('click',()=>{ document.querySelectorAll('.mode-card').forEach(c=>c.classList.remove('active')); card.classList.add('active'); switchMode(card.dataset.mode); }); });
 
@@ -333,17 +289,10 @@ sendBtn.addEventListener('click',handleSend);
 msgInput.addEventListener('keypress',e=>{ if(e.key==='Enter'){ e.preventDefault(); handleSend(); } });
 
 // ===== 情绪焚烧炉 =====
-function buildBurnUI(){ interactArea.classList.remove('hidden'); interactArea.innerHTML='<div class="interact-title">🔥 情绪焚烧炉</div><div class="interact-desc">写下愤怒，揉成纸团扔进火里</div><textarea class="interact-input" id="bIn" placeholder="把那些话写在这里…" maxlength="200"><span style="font-size:10px;opacity:0.5">最多200字</span></textarea><button class="interact-btn" id="bBtn" onclick="startBurn()">🔥 揉成纸团</button><div id="bSt" style="display:none;position:relative;width:100%;height:250px;margin-top:16px"><div class="paper-ball" id="pB" onclick="throwP()">📄</div><div class="fire-pit" id="fP">🔥</div></div><div id="bRe" style="display:none"></div>'; }
+function buildBurnUI(){ interactArea.classList.remove('hidden'); interactArea.innerHTML='<div class="interact-title">🔥 情绪焚烧炉</div><div class="interact-desc">写下愤怒，揉成纸团扔进火里</div><textarea class="interact-input" id="bIn" placeholder="把那些话写在这里…" maxlength="200"></textarea><button class="interact-btn" id="bBtn" onclick="startBurn()">🔥 揉成纸团</button><div id="bSt" style="display:none;position:relative;width:100%;height:250px;margin-top:16px"><div class="paper-ball" id="pB" onclick="throwP()">📄</div><div class="fire-pit" id="fP">🔥</div></div><div id="bRe" style="display:none"></div>'; }
 function startBurn(){ let t=document.getElementById('bIn')?.value?.trim(); if(!t) return; document.getElementById('bBtn').style.display='none'; document.getElementById('bIn').style.display='none'; document.getElementById('bSt').style.display='block'; }
 function throwP(){ let p=document.getElementById('pB'),f=document.getElementById('fP'); if(!p||!f) return; p.classList.add('thrown'); setTimeout(()=>{f.classList.add('burning');p.style.display='none';setTimeout(()=>{execBurn();},600);},700); }
 async function execBurn(){ let t=document.getElementById('bIn')?.value?.trim(),r=document.getElementById('bRe'),s=document.getElementById('bSt'); if(!t) return; s.innerHTML='<div style="font-size:60px;text-align:center;margin-top:60px">🔥</div>'; try{let res=await apiFetch({model:getModelName(),messages:[{role:"user",content:`焚烧："${t}"。仪式感结语（30字内）。`}],temperature:0.8,max_tokens:80});let d=await res.json();s.style.display='none';r.style.display='block';r.innerHTML=`<div class="interact-result"><div class="result-text">${d.choices?.[0]?.message?.content||"烧掉了。"}</div><button class="interact-btn" style="background:transparent;border:1px solid var(--btn);color:var(--btn)" onclick="buildBurnUI()">🔥 再烧一次</button></div>`;}catch(e){s.style.display='none';r.style.display='block';r.innerHTML='<div class="interact-result"><div class="result-text">烧掉了。</div><button class="interact-btn" style="background:transparent;border:1px solid var(--btn);color:var(--btn)" onclick="buildBurnUI()">🔥 再烧一次</button></div>';} }
-
-// ===== 纠结骰子 =====
-let diceOpts=[], diceRolling=false;
-function buildDiceUI(){ diceOpts=[]; diceRolling=false; interactArea.classList.remove('hidden'); interactArea.innerHTML='<div class="interact-title">🎲 纠结骰子</div><div class="interact-desc">把纠结交给骰子，纯随机</div><textarea class="interact-input" id="dIn" placeholder="比如：明天中午吃什么？" maxlength="200"></textarea><button class="interact-btn" id="dGB" onclick="genDice()">🎲 生成选项</button><div id="dA" style="display:none;width:100%;max-width:340px"><div id="dL" style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px"></div><div class="dice-stage"><div class="dice-cube" id="dC" onclick="rollD()"><div class="dice-face">🎲</div><div class="dice-face">🎲</div><div class="dice-face">🎲</div><div class="dice-face">🎲</div><div class="dice-face">🎲</div><div class="dice-face">🎲</div></div></div><div id="dR" style="display:none"></div><div id="dH" style="display:none" class="dice-hint-text"></div><button id="dRB" style="display:none;margin-top:12px" class="interact-btn" onclick="reDice()">🎲 再骰一次</button><button id="dRS" style="display:none;margin-top:8px;background:transparent;border:1px solid var(--btn);color:var(--btn)" class="interact-btn" onclick="buildDiceUI()">🔄 换问题</button></div>'; }
-async function genDice(){ let t=document.getElementById('dIn')?.value?.trim(); if(!t) return; let btn=document.getElementById('dGB'); btn.disabled=true;btn.textContent='生成中…'; try{ let r=await apiFetch({model:getModelName(),messages:[{role:'user',content:`决策："${t}"。转选项逗号分隔。不要建议。`}],temperature:0.7,max_tokens:200}); let d=await r.json(); let raw=d.choices?.[0]?.message?.content||t; diceOpts=raw.split(/[,，、]/).map(o=>o.trim()).filter(o=>o); if(diceOpts.length<2) diceOpts=['去','不去']; if(diceOpts.length>15) diceOpts=diceOpts.slice(0,15); document.getElementById('dA').style.display='block'; document.getElementById('dL').innerHTML=diceOpts.map(o=>`<span style="background:var(--bg-ai);border:1px solid var(--border-light);border-radius:12px;padding:4px 10px;font-size:12px;color:var(--text-ai)">${o}</span>`).join(''); btn.textContent='✅ 已生成'; }catch(e){ diceOpts=['去','不去']; document.getElementById('dA').style.display='block'; document.getElementById('dL').innerHTML=diceOpts.map(o=>`<span style="background:var(--bg-ai);border:1px solid var(--border-light);border-radius:12px;padding:4px 10px;font-size:12px;color:var(--text-ai)">${o}</span>`).join(''); btn.textContent='✅ 已生成'; } finally{btn.disabled=false;} }
-function rollD(){ if(!diceOpts.length || diceRolling) return; diceRolling=true; let c=document.getElementById('dC'); c.classList.remove('rolling'); void c.offsetWidth; c.classList.add('rolling'); document.getElementById('dR').style.display='none'; document.getElementById('dH').style.display='none'; document.getElementById('dRB').style.display='none'; setTimeout(()=>{ let r=diceOpts[Math.floor(Math.random()*diceOpts.length)]; document.getElementById('dR').innerHTML=`<div class="dice-result-text">🎯 ${r}</div>`; document.getElementById('dR').style.display='block'; document.getElementById('dH').textContent='如果你"咯噔"了一下——你早就有答案了。'; document.getElementById('dH').style.display='block'; document.getElementById('dRB').style.display='inline-block'; document.getElementById('dRS').style.display='inline-block'; diceRolling=false; },1500); }
-function reDice(){ document.getElementById('dR').style.display='none'; document.getElementById('dH').style.display='none'; document.getElementById('dRB').style.display='none'; rollD(); }
 
 // ===== 解结 =====
 let uH=[];
@@ -351,17 +300,13 @@ function buildUnknotUI(){ uH=[]; interactArea.classList.remove('hidden'); intera
 async function startU(){ let t=document.getElementById('uIn')?.value?.trim(); if(!t) return; uH=[{role:"user",content:t}]; document.getElementById('uIn').style.display='none'; document.getElementById('uBtn').style.display='none'; document.getElementById('uChat').style.display='block'; let ms=document.getElementById('uMsgs'); ms.innerHTML=`<div style="max-width:75%;padding:8px 12px;background:var(--bg-user);color:var(--text-user);border-radius:18px 18px 4px 18px;font-size:14px;align-self:flex-end">${t}</div>`; let ai=document.createElement('div'); ai.style.cssText='max-width:88%;padding:12px 16px;background:var(--bg-ai);color:var(--text-ai);border-radius:18px 18px 18px 4px;font-size:14px;align-self:flex-start;box-shadow:0 2px 8px rgba(0,0,0,0.03)'; ai.textContent='……'; ms.appendChild(ai); ms.scrollTop=ms.scrollHeight; try{ let r=await apiFetch({model:getModelName(),messages:[{role:"system",content:"苏格拉底式提问者。只问1-2个问题。不给建议。"},{role:"user",content:`纠结：${t}。只问我问题。`}],temperature:0.7,max_tokens:150}); let d=await r.json(); let reply=d.choices?.[0]?.message?.content||"如果不会失败，你的第一反应是什么？"; ai.innerHTML='<span class="unknot-thread">🧶</span> '+reply; uH.push({role:"assistant",content:reply}); }catch(e){ ai.innerHTML='<span class="unknot-thread">🧶</span> 你最不想面对的选择是什么？'; uH.push({role:"assistant",content:"你最不想面对的选择是什么？"}); } ms.scrollTop=ms.scrollHeight; document.getElementById('uRep')?.focus(); }
 async function contU(){ let inp=document.getElementById('uRep'),t=inp?.value?.trim(); if(!t) return; let ms=document.getElementById('uMsgs'); let ud=document.createElement('div'); ud.style.cssText='max-width:75%;padding:8px 12px;background:var(--bg-user);color:var(--text-user);border-radius:18px 18px 4px 18px;font-size:14px;align-self:flex-end'; ud.textContent=t; ms.appendChild(ud); inp.value=''; uH.push({role:"user",content:t}); let ai=document.createElement('div'); ai.style.cssText='max-width:88%;padding:12px 16px;background:var(--bg-ai);color:var(--text-ai);border-radius:18px 18px 18px 4px;font-size:14px;align-self:flex-start;box-shadow:0 2px 8px rgba(0,0,0,0.03)'; ai.textContent='……'; ms.appendChild(ai); ms.scrollTop=ms.scrollHeight; try{ let r=await apiFetch({model:getModelName(),messages:[{role:"system",content:"苏格拉底式提问者。用户说出答案后说：这是你自己找到的答案。"},...uH],temperature:0.7,max_tokens:150}); let d=await r.json(); let reply=d.choices?.[0]?.message?.content||"你现在心里有答案了吗？"; ai.innerHTML='<span class="unknot-thread">🧶</span> '+reply; uH.push({role:"assistant",content:reply}); if(reply.includes("你自己找到的答案")){ document.getElementById('uSend').style.display='none'; document.getElementById('uRep').style.display='none'; document.getElementById('uReset').style.display='inline-block'; } }catch(e){ ai.innerHTML='<span class="unknot-thread">🧶</span> 你现在心里有答案了吗？'; uH.push({role:"assistant",content:"你现在心里有答案了吗？"}); } ms.scrollTop=ms.scrollHeight; document.getElementById('uRep')?.focus(); }
 
-// ===== 镜子日记 =====
-function buildMirrorDiaryUI(){ interactArea.classList.remove('hidden'); interactArea.innerHTML='<div class="interact-title">🪞 镜子日记</div><div class="interact-desc">写一段心情，AI用第一人称帮你重写</div><textarea class="interact-input" id="mdIn" placeholder="比如：今天被老师说了…" maxlength="300"></textarea><button class="interact-btn" id="mdBtn" onclick="execMD()">🪞 照镜子</button><div id="mdRe" style="display:none;width:100%;max-width:340px;margin-top:16px"></div><button id="mdRetry" style="display:none;background:transparent;border:1px solid var(--btn);color:var(--btn)" class="interact-btn" onclick="buildMirrorDiaryUI()">🪞 再照一次</button>'; }
-async function execMD(){ let btn=document.getElementById('mdBtn'); if(!btn||btn.disabled) return; btn.disabled=true; let t=document.getElementById('mdIn')?.value?.trim(); if(!t){btn.disabled=false;return;} document.getElementById('mdBtn').style.display='none'; document.getElementById('mdIn').style.display='none'; let r=document.getElementById('mdRe'),rb=document.getElementById('mdRetry'); r.style.display='block'; r.innerHTML='<div style="text-align:center;padding:20px;color:var(--text-ai)"><span class="mirror-flip">🪞</span> 正在照镜子…</div>'; try{ let res=await apiFetch({model:getModelName(),messages:[{role:"user",content:`用第一人称帮用户重写："${t}"。80字内。`}],temperature:0.8,max_tokens:200}); let d=await res.json(); let reply=d.choices?.[0]?.message?.content||t; r.innerHTML=`<div class="interact-result"><div style="font-size:12px;opacity:0.5"><span class="mirror-flip">🪞</span> 镜子里</div><div class="result-text">${reply.replace(/\n/g,'<br>')}</div></div>`; rb.style.display='inline-block'; }catch(e){ r.innerHTML='<div class="interact-result"><div class="result-text">镜子模糊了</div></div>'; rb.style.display='inline-block'; } finally{btn.disabled=false;} }
-
 // ===== 父母翻译器 =====
 function buildParentUI(){ interactArea.classList.remove('hidden'); interactArea.innerHTML=`<div class="interact-title">🫂 父母翻译器</div><div class="interact-desc">翻译父母的话，理解自己的反应</div><div class="parent-translator-stage"><select class="parent-select" id="pC">${PARENT_CHARS.map(c=>`<option value="${c.v}">${c.l}</option>`).join('')}</select><select class="parent-select" id="pS">${PARENT_SITS.map(s=>`<option value="${s.v}">${s.l}</option>`).join('')}</select><textarea class="interact-input" id="pIn" placeholder="父母说了什么…" maxlength="300"></textarea><textarea class="interact-input" id="pF" placeholder="你的感受…" maxlength="200" style="min-height:60px"></textarea><button class="interact-btn" id="pBtn" onclick="execP()">🔍 翻译</button><div id="pRe" style="display:none;width:100%"></div><button id="pRetry" style="display:none;background:transparent;border:1px solid var(--btn);color:var(--btn)" class="interact-btn" onclick="buildParentUI()">🫂 再译一次</button></div>`; }
 async function execP(){ let btn=document.getElementById('pBtn'); if(!btn||btn.disabled) return; btn.disabled=true; let c=document.getElementById('pC')?.value||'',s=document.getElementById('pS')?.value||'',t=document.getElementById('pIn')?.value?.trim(),f=document.getElementById('pF')?.value?.trim(); if(!t){btn.disabled=false;return;} interactArea.innerHTML='<div style="text-align:center;padding:40px;color:var(--text-ai)">🫂 正在翻译…</div>'; try{ let r=await apiFetch({model:getModelName(),messages:[{role:"user",content:`性格：${c||'AI判断'}。处境：${s||'AI判断'}。父母："${t}"。感受：${f||'无'}。按翻译器规则输出三段。`}],temperature:0.7,max_tokens:400}); let d=await r.json(); let reply=d.choices?.[0]?.message?.content||"翻译失败"; interactArea.innerHTML=`<div class="parent-translator-stage"><select class="parent-select" id="pC">${PARENT_CHARS.map(x=>`<option value="${x.v}" ${x.v===c?'selected':''}>${x.l}</option>`).join('')}</select><select class="parent-select" id="pS">${PARENT_SITS.map(x=>`<option value="${x.v}" ${x.v===s?'selected':''}>${x.l}</option>`).join('')}</select><textarea class="interact-input" id="pIn" maxlength="300">${t.replace(/"/g,'&quot;')}</textarea><textarea class="interact-input" id="pF" maxlength="200" style="min-height:60px">${f.replace(/"/g,'&quot;')}</textarea><button class="interact-btn" id="pBtn" onclick="execP()">🔍 翻译</button><div id="pRe" style="width:100%"><div class="interact-result" style="text-align:left;line-height:1.7;font-size:13px">${reply.replace(/\n/g,'<br>')}</div></div><button id="pRetry" style="background:transparent;border:1px solid var(--btn);color:var(--btn)" class="interact-btn" onclick="buildParentUI()">🫂 再译一次</button></div>`; }catch(e){interactArea.innerHTML='<div class="interact-result"><div class="result-text">翻译失败</div><button class="interact-btn" style="background:transparent;border:1px solid var(--btn);color:var(--btn)" onclick="buildParentUI()">🫂 再试</button></div>';} finally{btn.disabled=false;} }
 
-// ===== 情绪日记 =====
-function buildEmotionDiaryUI(){ interactArea.classList.remove('hidden'); interactArea.innerHTML='<div class="interact-title">📊 情绪周记</div><div class="interact-desc">输入一周的心情记录，AI帮你回顾</div><textarea class="interact-input" id="emIn" placeholder="周一很开心、周二有点累、周三……" maxlength="500"></textarea><button class="interact-btn" id="emBtn" onclick="execED()">📊 生成周记</button><div id="emRe" style="display:none;width:100%;max-width:340px;margin-top:16px"></div><button id="emRetry" style="display:none;background:transparent;border:1px solid var(--btn);color:var(--btn)" class="interact-btn" onclick="buildEmotionDiaryUI()">📊 再写一次</button>'; }
-async function execED(){ let btn=document.getElementById('emBtn'); if(!btn||btn.disabled) return; btn.disabled=true; let t=document.getElementById('emIn')?.value?.trim(); if(!t){btn.disabled=false;return;} document.getElementById('emBtn').style.display='none'; document.getElementById('emIn').style.display='none'; let r=document.getElementById('emRe'),rb=document.getElementById('emRetry'); r.style.display='block'; r.innerHTML='<div style="text-align:center;padding:20px;color:var(--text-ai)">📊 正在回顾…</div>'; try{ let res=await apiFetch({model:getModelName(),messages:[{role:"user",content:`用户的一周心情："${t}"。帮ta生成叙事性情绪回顾。150字内。提取关键情绪变化。`}],temperature:0.8,max_tokens:500}); let d=await res.json(); let reply=d.choices?.[0]?.message?.content||"这周你经历了不少。"; r.innerHTML=`<div class="interact-result"><div style="font-size:12px;opacity:0.5">📊 情绪周记</div><div class="result-text">${reply.replace(/\n/g,'<br>')}</div></div>`; rb.style.display='inline-block'; }catch(e){ r.innerHTML='<div class="interact-result"><div class="result-text">周记暂时写不出来</div></div>'; rb.style.display='inline-block'; } finally{btn.disabled=false;} }
+// ===== 情绪周记 =====
+function buildDiaryUI(){ interactArea.classList.remove('hidden'); interactArea.innerHTML='<div class="interact-title">📊 情绪周记</div><div class="interact-desc">输入一周的心情记录，AI帮你回顾</div><textarea class="interact-input" id="emIn" placeholder="周一很开心、周二有点累、周三……" maxlength="500"></textarea><button class="interact-btn" id="emBtn" onclick="execDiary()">📊 生成周记</button><div id="emRe" style="display:none;width:100%;max-width:340px;margin-top:16px"></div><button id="emRetry" style="display:none;background:transparent;border:1px solid var(--btn);color:var(--btn)" class="interact-btn" onclick="buildDiaryUI()">📊 再写一次</button>'; }
+async function execDiary(){ let btn=document.getElementById('emBtn'); if(!btn||btn.disabled) return; btn.disabled=true; let t=document.getElementById('emIn')?.value?.trim(); if(!t){btn.disabled=false;return;} document.getElementById('emBtn').style.display='none'; document.getElementById('emIn').style.display='none'; let r=document.getElementById('emRe'),rb=document.getElementById('emRetry'); r.style.display='block'; r.innerHTML='<div style="text-align:center;padding:20px;color:var(--text-ai)">📊 正在回顾…</div>'; try{ let res=await apiFetch({model:getModelName(),messages:[{role:"user",content:`用户的一周心情："${t}"。帮ta生成叙事性情绪回顾。150字内。提取关键情绪变化。`}],temperature:0.8,max_tokens:500}); let d=await res.json(); let reply=d.choices?.[0]?.message?.content||"这周你经历了不少。"; r.innerHTML=`<div class="interact-result"><div style="font-size:12px;opacity:0.5">📊 情绪周记</div><div class="result-text">${reply.replace(/\n/g,'<br>')}</div></div>`; rb.style.display='inline-block'; }catch(e){ r.innerHTML='<div class="interact-result"><div class="result-text">周记暂时写不出来</div></div>'; rb.style.display='inline-block'; } finally{btn.disabled=false;} }
 
 // ===== 情绪镜像 =====
 function buildMirrorUI(){ interactArea.classList.remove('hidden'); mirrorStep=0; mirrorSelections={}; mirrorGenerating=false; renderMirrorStep(); }
@@ -369,25 +314,6 @@ function renderMirrorStep(){ if(mirrorStep>=MIRROR_STEPS.length){interactArea.in
 function selM(el,key,label){ document.querySelectorAll('[onclick*="selM"]').forEach(c=>c.classList.remove('selected')); el.classList.add('selected'); mirrorSelections[key]=label; document.getElementById('mConf').disabled=false; }
 function confM(){ mirrorStep++; renderMirrorStep(); }
 async function genMirror(){ let btn=document.getElementById('mGen'); if(!btn||btn.disabled||mirrorGenerating) return; btn.disabled=true; mirrorGenerating=true; let ex=document.getElementById('mEx')?.value?.trim()||''; interactArea.innerHTML='<div style="text-align:center;padding:40px;color:var(--text-ai)">💠 正在生成…</div>'; try{ let r=await apiFetch({model:getModelName(),messages:[{role:"user",content:'镜像：颜色'+(mirrorSelections.color||'?')+'，需求'+(mirrorSelections.need||'?')+'，强度'+(mirrorSelections.intensity||'?')+'。'+(ex?'补充：'+ex:'')+'。按【情绪画像】【内心独白】【温柔提醒】输出。'}],temperature:0.8,max_tokens:500}); let d=await r.json(); let reply=d.choices?.[0]?.message?.content||"无法生成"; interactArea.innerHTML='<div class="mirror-result-card"><span class="result-emoji">💠</span><div class="result-title">你的情绪镜像</div><div style="color:var(--text-ai);line-height:1.7">'+reply.replace(/\n/g,'<br>')+'</div><button class="interact-btn" style="margin-top:16px;background:transparent;border:1px solid var(--btn);color:var(--btn)" onclick="buildMirrorUI()">🔄 重新开始</button></div>'; }catch(e){interactArea.innerHTML='<div class="mirror-result-card"><span class="result-emoji">💠</span><div class="result-title">镜像模糊了</div><button class="interact-btn" style="margin-top:16px;background:transparent;border:1px solid var(--btn);color:var(--btn)" onclick="buildMirrorUI()">🔄 重新开始</button></div>';} finally{mirrorGenerating=false;} }
-
-// ===== 彩蛋：温暖故事（隐藏入口，仅通过设置页触发）=====
-function triggerEasterEgg(){
-  let o=document.getElementById('easterEggOverlay'),bg=document.getElementById('eeBg'),boy=document.getElementById('eeBoy'),candy=document.getElementById('eeCandy'),sister=document.getElementById('eeSister'),cry=document.getElementById('eeCry'),bubble=document.getElementById('eeBubble'),result=document.getElementById('eeResult'),hearts=document.getElementById('eeHearts'),ex=document.getElementById('eeExitBtn');
-  boy.textContent='👦'; candy.style.opacity='1'; sister.style.display='none'; cry.style.display='none'; bubble.style.display='none'; result.style.display='none'; hearts.style.display='none'; ex.style.display='none'; bg.classList.remove('warm-bg'); o.classList.add('active');
-  setTimeout(()=>{candy.style.bottom='60px';candy.style.opacity='0.6';},0);
-  setTimeout(()=>{cry.style.display='block';cry.style.cssText='position:absolute;font-size:50px;z-index:11;top:40px;left:50px;animation:popUp 0.4s ease-out forwards';boy.style.bottom='110px';},500);
-  setTimeout(()=>{sister.style.display='block';sister.style.right='30px';},1200);
-  setTimeout(()=>{bubble.style.display='block';bubble.textContent='怎么啦小弟弟？';},1800);
-  setTimeout(()=>{bubble.textContent='没关系，掉了可以再买呀～';},2500);
-  setTimeout(()=>{cry.style.display='none';boy.textContent='🙂';bubble.textContent='来，姐姐陪你一起去。';sister.style.right='60px';},3200);
-  setTimeout(()=>{result.style.display='block';result.style.cssText='position:absolute;font-size:40px;z-index:10;bottom:140px;left:100px;animation:popUp 0.4s ease-out forwards';result.textContent='🪙';bubble.textContent='给你硬币，去买新的～';},3800);
-  setTimeout(()=>{result.textContent='🍬';result.style.cssText='position:absolute;font-size:50px;z-index:10;bottom:140px;left:60px;animation:popUp 0.4s ease-out forwards';sister.style.right='50px';bubble.textContent='给你的新棒棒糖～';},4500);
-  setTimeout(()=>{boy.textContent='👦';result.style.display='none';hearts.style.display='flex';bubble.textContent='谢谢你，姐姐！';setTimeout(()=>{bubble.textContent='不客气呀，要开心哦～';},600);},5200);
-  setTimeout(()=>{bg.classList.add('warm-bg');ex.style.display='block';},6500);
-}
-function closeEasterEgg(){
-  document.getElementById('easterEggOverlay').classList.remove('active');
-}
 
 // ===== 初始化 =====
 (function(){ let t=localStorage.getItem('chat-theme'); if(t) setTheme(t); else setTheme('theme-pink'); updateModelUI(); switchMode('通用陪伴'); })();
